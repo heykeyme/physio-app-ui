@@ -1,0 +1,54 @@
+/* Page visibility */
+.page-content { display: none; }
+#page-dashboard:checked ~ main #dashboard-content { display: block; }
+#page-classes:checked ~ main #classes-content { display: block; }
+#page-schedule:checked ~ main #schedule-content { display: block; }
+#page-materials:checked ~ main #materials-content { display: block; }
+#page-attendance:checked ~ main #attendance-content { display: block; }
+#page-assessments:checked ~ main #assessments-content { display: block; }
+#page-participants:checked ~ main #participants-content { display: block; }
+#page-reports:checked ~ main #reports-content { display: block; }
+#page-feedback:checked ~ main #feedback-content { display: block; }
+
+/* Mobile menu overlay toggle */
+.menu-toggle-checkbox:checked ~ .menu-overlay {
+  pointer-events: auto;
+}
+.menu-toggle-checkbox:checked ~ .menu-overlay .menu-overlay-bg {
+  opacity: 1;
+}
+.menu-toggle-checkbox:checked ~ .menu-overlay .menu-sidebar {
+  transform: translateX(0);
+}
+
+/* Bottom nav active state */
+#page-dashboard:checked ~ nav .bottom-nav-item[for="page-dashboard"],
+#page-classes:checked ~ nav .bottom-nav-item[for="page-classes"],
+#page-schedule:checked ~ nav .bottom-nav-item[for="page-schedule"],
+#page-materials:checked ~ nav .bottom-nav-item[for="page-materials"],
+#page-assessments:checked ~ nav .bottom-nav-item[for="page-assessments"] {
+  color: #0d9488;
+  font-weight: 600;
+}
+
+/* Desktop sidebar active state */
+#page-dashboard:checked ~ aside .sidebar-link[for="page-dashboard"],
+#page-classes:checked ~ aside .sidebar-link[for="page-classes"],
+#page-schedule:checked ~ aside .sidebar-link[for="page-schedule"],
+#page-materials:checked ~ aside .sidebar-link[for="page-materials"],
+#page-attendance:checked ~ aside .sidebar-link[for="page-attendance"],
+#page-assessments:checked ~ aside .sidebar-link[for="page-assessments"],
+#page-participants:checked ~ aside .sidebar-link[for="page-participants"],
+#page-reports:checked ~ aside .sidebar-link[for="page-reports"],
+#page-feedback:checked ~ aside .sidebar-link[for="page-feedback"] {
+  background-color: #ccfbf1;
+  color: #0f766e;
+  font-weight: 600;
+}
+
+*:focus-visible { outline: 2px solid #0d9488; outline-offset: 2px; }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 999px; }
+.menu-sidebar { transition: transform 0.3s ease-in-out; }
+.menu-overlay-bg { transition: opacity 0.3s; }

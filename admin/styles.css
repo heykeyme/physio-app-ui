@@ -1,0 +1,56 @@
+/* Page visibility */
+.page-content { display: none; }
+#page-dashboard:checked ~ main #dashboard-content { display: block; }
+#page-users:checked ~ main #users-content { display: block; }
+#page-courses:checked ~ main #courses-content { display: block; }
+#page-reports:checked ~ main #reports-content { display: block; }
+#page-system:checked ~ main #system-content { display: block; }
+#page-feedback:checked ~ main #feedback-content { display: block; }
+
+/* Mobile menu overlay toggle */
+.menu-toggle-checkbox:checked ~ .menu-overlay {
+  pointer-events: auto;
+}
+.menu-toggle-checkbox:checked ~ .menu-overlay .menu-overlay-bg {
+  opacity: 1;
+}
+.menu-toggle-checkbox:checked ~ .menu-overlay .menu-sidebar {
+  transform: translateX(0);
+}
+
+/* Bottom nav active state */
+#page-dashboard:checked ~ nav .bottom-nav-item[for="page-dashboard"],
+#page-users:checked ~ nav .bottom-nav-item[for="page-users"],
+#page-courses:checked ~ nav .bottom-nav-item[for="page-courses"],
+#page-reports:checked ~ nav .bottom-nav-item[for="page-reports"],
+#page-system:checked ~ nav .bottom-nav-item[for="page-system"] {
+  color: #0d9488; /* brand-600 */
+  font-weight: 600;
+}
+
+/* Desktop sidebar active state */
+#page-dashboard:checked ~ aside .sidebar-link[for="page-dashboard"],
+#page-users:checked ~ aside .sidebar-link[for="page-users"],
+#page-courses:checked ~ aside .sidebar-link[for="page-courses"],
+#page-reports:checked ~ aside .sidebar-link[for="page-reports"],
+#page-system:checked ~ aside .sidebar-link[for="page-system"],
+#page-feedback:checked ~ aside .sidebar-link[for="page-feedback"] {
+  background-color: #ccfbf1; /* brand-100 */
+  color: #0f766e; /* brand-700 */
+  font-weight: 600;
+}
+
+/* Focus ring */
+*:focus-visible {
+  outline: 2px solid #0d9488;
+  outline-offset: 2px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 999px; }
+
+/* Smooth transitions */
+.menu-sidebar { transition: transform 0.3s ease-in-out; }
+.menu-overlay-bg { transition: opacity 0.3s; }
