@@ -1,0 +1,66 @@
+/* Page switching logic */
+.page-content {
+  display: none;
+}
+#page-dashboard:checked ~ main #dashboard-content { display: block; }
+#page-courses:checked ~ main #courses-content { display: block; }
+#page-catalog:checked ~ main #catalog-content { display: block; }
+#page-schedule:checked ~ main #schedule-content { display: block; }
+#page-materials:checked ~ main #materials-content { display: block; }
+#page-assessments:checked ~ main #assessments-content { display: block; }
+#page-certificates:checked ~ main #certificates-content { display: block; }
+#page-feedback:checked ~ main #feedback-content { display: block; }
+#page-profile:checked ~ main #profile-content { display: block; }
+
+/* Mobile menu toggle animation */
+.menu-toggle-checkbox:checked ~ .menu-overlay {
+  pointer-events: auto;
+}
+.menu-toggle-checkbox:checked ~ .menu-overlay .menu-overlay-bg {
+  opacity: 1;
+}
+.menu-toggle-checkbox:checked ~ .menu-overlay .menu-sidebar {
+  transform: translateX(0);
+}
+
+/* Active state for bottom nav items */
+#page-dashboard:checked ~ nav .bottom-nav-item[for="page-dashboard"],
+#page-courses:checked ~ nav .bottom-nav-item[for="page-courses"],
+#page-schedule:checked ~ nav .bottom-nav-item[for="page-schedule"],
+#page-materials:checked ~ nav .bottom-nav-item[for="page-materials"] {
+  color: #0d9488; /* brand-600 */
+  font-weight: 600;
+}
+
+/* Active state for desktop sidebar links */
+#page-dashboard:checked ~ aside .sidebar-link[for="page-dashboard"],
+#page-courses:checked ~ aside .sidebar-link[for="page-courses"],
+#page-catalog:checked ~ aside .sidebar-link[for="page-catalog"],
+#page-schedule:checked ~ aside .sidebar-link[for="page-schedule"],
+#page-materials:checked ~ aside .sidebar-link[for="page-materials"],
+#page-assessments:checked ~ aside .sidebar-link[for="page-assessments"],
+#page-certificates:checked ~ aside .sidebar-link[for="page-certificates"],
+#page-feedback:checked ~ aside .sidebar-link[for="page-feedback"],
+#page-profile:checked ~ aside .sidebar-link[for="page-profile"] {
+  background-color: #ccfbf1; /* brand-100 */
+  color: #0f766e; /* brand-700 */
+  font-weight: 600;
+}
+
+/* Focus visibility */
+*:focus-visible {
+  outline: 2px solid #0d9488;
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
